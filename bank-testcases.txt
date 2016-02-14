@@ -1,0 +1,99 @@
+Testcase 1: 
+Input: ./client
+Output: Usage: ./client host
+
+Testcase 2: 
+Input: ./client [invalid name]
+Output: The host that you have given does not exist.
+
+Testcase 3: This assumes client/server connection is successful 
+Input: [Press enter, no input]
+Output: The command that you have entered is not valid. Please try again.
+
+Testcase 4: This assumes client/server connection is successful 
+Input: start or open [with no name] 
+Output: You have not entered a name.
+
+Testcase 5: This assumes client/server connection is successful
+Input: start [invalid name]
+Output: There are no accounts with the name "[Invalid name]”" currently open. Please try again later.
+
+Testcase 6: This assumes client/server connection is successful
+Input: open Jack Daniels
+Output: Thank you for opening an account with us, Jack Daniels!
+
+Testcase 7: This assume client/server connection is successful
+Input: start Jack Daniels
+Output: You have successfully started a session.
+
+Testcase 8: This assume client/server connection is successful
+Input: start Jack Daniels
+Output: You have successfully started a session.
+
+Testcase 9: This assume client/server connection is successful
+Input: start Jack Daniels
+Output: You have successfully started a session.
+
+Testcase 10: This assume client/server connection is successful
+Input: credit 0.01
+Input: You have successfully crebited $0.01 from your account.
+
+Testcase 11: This assume client/server connection is successful
+Input: debit 0.01
+Output: You have successfully debited $0.01 from your account.
+
+Testcase 12: This assume client/server connection is successful
+Input: debit 0.01
+Output: The amount that you have entered is greater than your balance. You may not debit from your account at this time.
+
+Testcase 13: This assume client/server connection is successful
+Input: open Bud 
+Output: You are already logged in. You may not start another account.
+
+Testcase 14: This assume client/server connection is successful
+Input: balance
+Output: Your account balance is $0.00.
+
+Testcase 15: This assume client/server connection is successful
+Input: start j
+Output: You are already logged in. You may not start an account.
+
+Testcase 16: This assume client/server connection is successful
+Input: finish
+Output: You have successfully finished your session.
+
+Testcase 17: 20 full accounts have been made
+Input: open m
+Output: The maximum number of accounts has been reached. You may not open one at this time. 
+
+Testcase 18: 20 full accounts have been made
+Input: start a
+Output: You have successfully started a session. 
+
+Testcase 19: 20 full accounts have been made
+Input: start z
+Output: You are already logged in. You may not start an account.
+
+Testcase 20: 20 full accounts have been made
+Input: start z
+Output: You are already logged in. You may not start an account.
+
+Testcase 21: crtl-c with z in session. 
+Input: ctrl-z
+Output: z session closes, mutex unlocks, upon connecting again, z is available to connect again. 
+
+Testcase 22: crtl-c in client with z in session. 
+Input: ctrl-z
+Output: z session closes, mutex unlocks, upon connecting again, z is available to connect again.
+
+Testcase 23: Two clients trying to connect to the same session.
+Input: two sessions trying to connect. 
+Output: 8 trylock messages, then returned to menu. 
+
+Testcase 24: Two clients add 20 accounts. Neither can add another account. 
+Input: 20 accounts, 2 clients
+Output: Not able to create new account.
+
+Testcase 25: Two clients, 20 accounts, both can work on different sesssions. 
+Input: 20 accounts, 2 clients, 2 sessions
+Output: Working code.
